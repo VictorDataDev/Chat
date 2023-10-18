@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "t0qKxiccgkGBtkYykcy1EBEOX3+d01s9P/4yG/hpRGE=",
+  "Source": "Api.SignalR.Chat",
+  "BasePath": "_content/Api.SignalR.Chat",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

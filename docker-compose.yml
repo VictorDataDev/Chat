@@ -1,0 +1,28 @@
+version: '3.0'
+services:
+  chat_api:
+    container_name: chat-api
+    image: ${DOCKER_REGISTRY-}apisignalrchat
+    build:
+      context: .
+      dockerfile: Api.SignalR.Chat/Dockerfile
+    ports:
+      - "7140:80"
+    restart: always
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+      - chat-network
+  chat_front:
+    build:
+      context: ./chat-message # Substitua pelo caminho para o diretório da sua aplicação Vue.js
+      dockerfile: Dockerfile # Substitua pelo nome do seu Dockerfile
+    ports:
+      - "8080:80" 
+    command: npm run serve
+    networks:
+      - chat-network
+    
+networks:
+  chat-network:
+    driver: bridge
